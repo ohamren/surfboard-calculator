@@ -13,5 +13,5 @@ ReactDOM.render(
   <Provider store={createStore(reducers)}>
     <Page />
   </Provider>
-  , document.getElementById('app')
+  , document.querySelector('.app')
 )

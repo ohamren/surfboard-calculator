@@ -19,21 +19,15 @@ class Page extends Component {
   render() {
     return (
       <div className="page">
-        <header className="header">
-          <div className="header__logo_1"></div>
-          <div className="header__plus_letter">+</div>
-          <div className="header__logo_2"></div>
-        </header>
-        <main className="main">
           <div className="input">
             <div className="level">
+            Yo!
             </div>
             <div className="fitness">
             </div>
             <div className="weight">
             </div>
           </div>
-        </main>
       </div>
     )
   }
