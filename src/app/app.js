@@ -7,11 +7,11 @@ import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import reducers from './reducers'
-import Page from './containers/Page'
+import Wrapper from './containers/Wrapper'
 
 ReactDOM.render(
   <Provider store={createStore(reducers)}>
-    <Page />
+    <Wrapper />
   </Provider>
-  , document.querySelector('.app')
+  , document.querySelector('.app-wrapper')
 )
