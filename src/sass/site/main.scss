@@ -1,0 +1,73 @@
+.input__icon,
+.result__icon {
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.level__icon {
+  background-image: url('../img/level-icon.png');
+  background-size: 27px 17px;
+  width: 27px;
+  height: 17px;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url('../img/level-icon-x2.png');
+  }
+}
+
+.fitness__icon {
+  background-image: url('../img/fitness-icon.png');
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url('../img/fitness-icon-x2.png');
+  }
+}
+
+.weight__icon {
+  background-image: url('../img/weight-icon.png');
+  background-size: 23px 24px;
+  width: 23px;
+  height: 24px;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url('../img/weight-icon-x2.png');
+  }
+}
+
+.result__icon {
+  background-image: url('../img/result-icon.png');
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url('../img/result-icon-x2.png');
+  }
+}

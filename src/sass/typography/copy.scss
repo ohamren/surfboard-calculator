@@ -1,0 +1,18 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: $black;
+  font-family: $font-main;
+  font-weight: normal;
+  @include font-size(0.75);
+	line-height: 1.25;
+}
+
+.input__slider-text,
+.result--highlight,
+.surfboard-suggestion--highlight,
+.surfboard-suggestions--highlight {
+  font-family: $font-highlighted;
+}

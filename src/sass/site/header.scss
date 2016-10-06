@@ -1,0 +1,26 @@
+.header {
+  background-color: $green;
+  height: 56px;
+}
+
+.header__logo {
+  background-image: url('../img/surfboard-calculator-logo.png');
+  background-size: 206px 36px;
+  background-repeat: no-repeat;
+  width: 206px;
+  height: 36px;
+  display: block;
+
+  @include center-block;
+  @include vertical-align;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url('../img/surfboard-calculator-logo-x2.png');
+  }
+}

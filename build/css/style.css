@@ -45,48 +45,86 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-#container {
-  max-width: 100%;
+@font-face {
+  font-family: 'roboto_regular';
+  src: url("../fonts/Roboto-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype"), url("../fonts/Roboto-Regular.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'roboto_black';
+  src: url("../fonts/Roboto-Black.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff"), url("../fonts/Roboto-Black.ttf") format("truetype"), url("../fonts/Roboto-Black.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+
+body,
+button,
+input,
+select,
+textarea {
+  color: #000000;
+  font-family: "roboto_regular", sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1.25; }
+
+.input__slider-text,
+.result--highlight,
+.surfboard-suggestion--highlight,
+.surfboard-suggestions--highlight {
+  font-family: "roboto_black", sans-serif; }
+
+.header {
+  background-color: #00ff99;
+  height: 56px; }
+
+.header__logo {
+  background-image: url("../img/surfboard-calculator-logo.png");
+  background-size: 206px 36px;
+  background-repeat: no-repeat;
+  width: 206px;
+  height: 36px;
+  display: block;
+  display: block;
   margin-left: auto;
-  margin-right: auto; }
-  #container:after {
-    content: " ";
-    display: block;
-    clear: both; }
-  #container #left {
-    display: none; }
-    @media (min-width: 1200px) {
-      #container #left {
-        display: inline;
-        width: 14.28571%;
-        float: left;
-        margin-right: 2.85714%; } }
-  @media (min-width: 1200px) {
-    #container #app {
-      width: 65.71429%;
-      float: left;
-      margin-right: 2.85714%;
-      margin-top: 16px; } }
-  #container #right {
-    display: none; }
-    @media (min-width: 1200px) {
-      #container #right {
-        display: inline;
-        width: 14.28571%;
-        float: right;
-        margin-right: 0; } }
+  margin-right: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .header__logo {
+      background-image: url("../img/surfboard-calculator-logo-x2.png"); } }
 
-.floatingButtonWrapper {
-  position: fixed;
-  right: 24px;
-  bottom: 48px; }
-  @media (min-width: 1200px) {
-    .floatingButtonWrapper {
-      right: 18%; } }
+.input__icon,
+.result__icon {
+  background-repeat: no-repeat;
+  display: block; }
 
-html {
-  font-family: sans-serif; }
+.level__icon {
+  background-image: url("../img/level-icon.png");
+  background-size: 27px 17px;
+  width: 27px;
+  height: 17px; }
 
-body {
-  font-size: 13px;
-  line-height: 20px; }
+.fitness__icon {
+  background-image: url("../img/fitness-icon.png");
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px; }
+
+.weight__icon {
+  background-image: url("../img/weight-icon.png");
+  background-size: 23px 24px;
+  width: 23px;
+  height: 24px; }
+
+.result__icon {
+  background-image: url("../img/result-icon.png");
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px; }
