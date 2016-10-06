@@ -29,6 +29,7 @@ class Wrapper extends Component {
                 <div className="input__slider-text">How well do you surf?</div>
                 <div className="input__slider">
                   <input
+                    className="input--slider"
                     type="range"
                     min="0"
                     max="50"
@@ -45,6 +46,7 @@ class Wrapper extends Component {
                 <div className="input__slider-text">Are you in shape?</div>
                 <div className="input__slider">
                   <input
+                    className="input--slider"
                     type="range"
                     min="0"
                     max="50"
@@ -61,6 +63,7 @@ class Wrapper extends Component {
                 <div className="input__slider-text">You weight?</div>
                 <div className="input__slider">
                   <input
+                    className="input--slider"
                     type="range"
                     min="0"
                     max="50"
