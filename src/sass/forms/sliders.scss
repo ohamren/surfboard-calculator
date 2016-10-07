@@ -2,6 +2,7 @@ input[type=range] {
   -webkit-appearance: none;
   margin: 18px 0;
   width: 100%;
+  background-color: $gray;
 }
 
 input[type=range]:focus {
@@ -83,4 +84,24 @@ input[type=range]:focus::-ms-fill-lower {
 
 input[type=range]:focus::-ms-fill-upper {
   background: $green;
+}
+
+// Text underneath
+.input--slider_description_text[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: $gray;
+  border: 0px;
+}
+
+.input--slider_description_text[type=range]::-webkit-slider-thumb {
+  border: 0px;
+  height: 24px;
+  width: 32px;
+  background: $gray;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -20px;
 }

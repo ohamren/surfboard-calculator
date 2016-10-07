@@ -5,6 +5,7 @@ Renders all the underlying subcomponents.
 */
 
 import React, {Component} from 'react'
+import ReactBootstrapSlider from 'react-bootstrap-slider'
 //import {connect} from 'react-redux'
 
 class Wrapper extends Component {
@@ -35,9 +36,28 @@ class Wrapper extends Component {
                     max="50"
                     value={this.state.sliderLevel}
                     step="5"
-                    onChange={(e) => this.setState({sliderLevel: e.target.value})}
+                    onChange={e => this.setState({sliderLevel: Number(e.target.value)})}
                     />
                 </div>
+                <div className="input__slider">
+                  <input
+                    className="input--slider_description_text"
+                    type="range"
+                    min="0"
+                    max="50"
+                    value={this.state.sliderLevel}
+                    step="5"
+                    />
+                </div>
+                <ReactBootstrapSlider
+                    value={this.state.sliderLevel}
+                    change={e => this.setState({sliderLevel: Number(e.target.value)})}
+                    slideStop={e => this.setState({sliderLevel: Number(e.target.value)})}
+                    step={10}
+                    max={100}
+                    min={0}
+                    reverse={true}
+                    />
             </div>
           </div>
           <div className="input fitness">
@@ -52,7 +72,7 @@ class Wrapper extends Component {
                     max="50"
                     value={this.state.sliderFitness}
                     step="5"
-                    onChange={(e) => this.setState({sliderFitness: e.target.value})}
+                    onChange={e => this.setState({sliderFitness: e.target.value})}
                     />
                 </div>
             </div>
@@ -69,7 +89,7 @@ class Wrapper extends Component {
                     max="50"
                     value={this.state.sliderWeight}
                     step="5"
-                    onChange={(e) => this.setState({sliderWeight: e.target.value})}
+                    onChange={e => this.setState({sliderWeight: e.target.value})}
                     />
                 </div>
             </div>
