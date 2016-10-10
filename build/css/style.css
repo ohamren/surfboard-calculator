@@ -565,7 +565,9 @@ textarea {
 
 .slider-handle {
   background-color: #9933ff;
-  background-image: none; }
+  background-image: none;
+  height: 16px;
+  width: 16px; }
 
 .slider.slider-horizontal .slider-track {
   height: 4px; }
@@ -579,11 +581,18 @@ textarea {
 .tooltip-inner {
   background-color: #000000; }
 
+.tooltip.bottom {
+  margin-top: 0px; }
+
+.tooltip.bottom .tooltip-arrow {
+  margin-left: -7px; }
+
 .app {
   padding-left: 16px;
   padding-right: 16px; }
 
-.input {
+.input,
+.result {
   padding-top: 8px;
   height: 72px; }
 
@@ -594,3 +603,6 @@ textarea {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
+
+.input__slider {
+  padding-top: 8px; }

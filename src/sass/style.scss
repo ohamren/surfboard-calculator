@@ -13,7 +13,8 @@
   padding-right: 16px;
 }
 
-.input {
+.input,
+.result {
   padding-top: 8px;
   height: 72px;
 }
@@ -21,4 +22,8 @@
 .input__icon,
 .input__container {
   @include vertical-align;
+}
+
+.input__slider {
+  padding-top: 8px;
 }

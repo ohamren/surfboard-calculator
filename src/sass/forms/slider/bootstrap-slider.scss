@@ -33,6 +33,8 @@
 .slider-handle {
   background-color: $purple;
   background-image: none;
+  height: 16px;
+  width: 16px;
 }
 
 .slider.slider-horizontal .slider-track {
@@ -49,4 +51,12 @@
 
 .tooltip-inner {
   background-color: $black;
+}
+
+.tooltip.bottom {
+  margin-top: 0px;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  margin-left: -7px;
 }

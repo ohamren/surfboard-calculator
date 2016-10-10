@@ -136,8 +136,8 @@ class Wrapper extends Component {
             </div>
           </div>
         </div>
+        <div className="hr"></div>
         <div className="result">
-          <div className="hr"></div>
           <div className="result__icon"></div>
           <div className="result__text">Your board should be about
           <span className="result--highlight"> 32-40 </span>litres
@@ -145,8 +145,8 @@ class Wrapper extends Component {
           long, <span className="result--highlight"> 19 3/4 </span> inches wide
           and <span className="result--highlight"> 2 3/8 </span>inches thick.
           </div>
-          <div className="hr"></div>
         </div>
+        <div className="hr"></div>
         <div className="surfboard-suggestions">
           <div className="surfboard-suggestions--highlight">
             These sticks might suit you!
