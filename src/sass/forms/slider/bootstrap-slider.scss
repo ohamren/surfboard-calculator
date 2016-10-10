@@ -10,4 +10,43 @@
 
 @import "variables";
 @import "mixins";
+@import "bootstrap_dependencies";
 @import "rules";
+
+.slider.slider-horizontal {
+  width: 100%;
+}
+
+.slider-selection {
+  background-color: $green;
+  background-image: none;
+  border: 0px;
+  border-radius: 0px;
+  border-image-width: 0px;
+  box-shadow: none;
+}
+
+.slider-track-high {
+  background-color: $gray;
+}
+
+.slider-handle {
+  background-color: $purple;
+  background-image: none;
+}
+
+.slider.slider-horizontal .slider-track {
+  height: 4px;
+}
+
+.slider.slider-horizontal .slider-track {
+  margin-top: -2px;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: $black;
+}
+
+.tooltip-inner {
+  background-color: $black;
+}

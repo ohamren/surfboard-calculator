@@ -13,10 +13,58 @@ class Wrapper extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      sliderLevel: 25,
-      sliderFitness: 25,
-      sliderWeight: 25
+      sliderLevel: 50,
+      sliderFitness: 50,
+      sliderWeight: 80,
     }
+  }
+
+  level() {
+    if(this.state.sliderLevel === 0) {
+      return "No skill whatsoever"
+      //return value + ' ' + this.id;
+    }
+    if(this.state.sliderLevel === 25) {
+      return "White water warrior"
+    }
+    if(this.state.sliderLevel === 50) {
+      return "Avreage Joe"
+    }
+    if(this.state.sliderLevel === 75) {
+      return "Pro"
+    }
+    if(this.state.sliderLevel === 100) {
+      return "Kelly Slater on magic chia seeds"
+    }
+    else {
+      return 'Inbetweener'
+    }
+  }
+
+  fitness() {
+    if(this.state.sliderFitness === 0) {
+      return "Never worked out in my life"
+    }
+    if(this.state.sliderFitness === 25) {
+      return "Poor shape"
+    }
+    if(this.state.sliderFitness === 50) {
+      return "It's ok"
+    }
+    if(this.state.sliderFitness === 75) {
+      return "Waterman"
+    }
+    if(this.state.sliderFitness === 100) {
+      return "Michael Phelps"
+    }
+    else {
+      return 'Inbetweener'
+    }
+  }
+
+  weight() {
+    var lbs = Math.ceil(this.state.sliderWeight * 2.2046)
+    return this.state.sliderWeight + ' kg / ' + lbs + ' lbs'
   }
 
   // Renders the main components.
@@ -29,35 +77,20 @@ class Wrapper extends Component {
             <div className="input__container">
                 <div className="input__slider-text">How well do you surf?</div>
                 <div className="input__slider">
-                  <input
-                    className="input--slider"
-                    type="range"
-                    min="0"
-                    max="50"
-                    value={this.state.sliderLevel}
-                    step="5"
-                    onChange={e => this.setState({sliderLevel: Number(e.target.value)})}
-                    />
-                </div>
-                <div className="input__slider">
-                  <input
-                    className="input--slider_description_text"
-                    type="range"
-                    min="0"
-                    max="50"
-                    value={this.state.sliderLevel}
-                    step="5"
-                    />
-                </div>
-                <ReactBootstrapSlider
+                  <ReactBootstrapSlider
                     value={this.state.sliderLevel}
                     change={e => this.setState({sliderLevel: Number(e.target.value)})}
                     slideStop={e => this.setState({sliderLevel: Number(e.target.value)})}
-                    step={10}
+                    step={25}
                     max={100}
                     min={0}
                     reverse={true}
-                    />
+                    tooltip='always'
+                    tooltip_position='bottom'
+                    handle='square'
+                    formatter={() => this.level()}
+                  />
+              </div>
             </div>
           </div>
           <div className="input fitness">
@@ -65,15 +98,19 @@ class Wrapper extends Component {
             <div className="input__container">
                 <div className="input__slider-text">Are you in shape?</div>
                 <div className="input__slider">
-                  <input
-                    className="input--slider"
-                    type="range"
-                    min="0"
-                    max="50"
+                  <ReactBootstrapSlider
                     value={this.state.sliderFitness}
-                    step="5"
-                    onChange={e => this.setState({sliderFitness: e.target.value})}
-                    />
+                    change={e => this.setState({sliderFitness: Number(e.target.value)})}
+                    slideStop={e => this.setState({sliderFitness: Number(e.target.value)})}
+                    step={25}
+                    max={100}
+                    min={0}
+                    reverse={true}
+                    tooltip='always'
+                    tooltip_position='bottom'
+                    handle='square'
+                    formatter={() => this.fitness()}
+                  />
                 </div>
             </div>
           </div>
@@ -82,20 +119,25 @@ class Wrapper extends Component {
             <div className="input__container">
                 <div className="input__slider-text">You weight?</div>
                 <div className="input__slider">
-                  <input
-                    className="input--slider"
-                    type="range"
-                    min="0"
-                    max="50"
+                  <ReactBootstrapSlider
                     value={this.state.sliderWeight}
-                    step="5"
-                    onChange={e => this.setState({sliderWeight: e.target.value})}
-                    />
+                    change={e => this.setState({sliderWeight: Number(e.target.value)})}
+                    slideStop={e => this.setState({sliderWeight: Number(e.target.value)})}
+                    step={1}
+                    max={200}
+                    min={25}
+                    reverse={true}
+                    tooltip='always'
+                    tooltip_position='bottom'
+                    handle='square'
+                    formatter={() => this.weight()}
+                  />
                 </div>
             </div>
           </div>
         </div>
         <div className="result">
+          <div className="hr"></div>
           <div className="result__icon"></div>
           <div className="result__text">Your board should be about
           <span className="result--highlight"> 32-40 </span>litres
@@ -103,6 +145,7 @@ class Wrapper extends Component {
           long, <span className="result--highlight"> 19 3/4 </span> inches wide
           and <span className="result--highlight"> 2 3/8 </span>inches thick.
           </div>
+          <div className="hr"></div>
         </div>
         <div className="surfboard-suggestions">
           <div className="surfboard-suggestions--highlight">

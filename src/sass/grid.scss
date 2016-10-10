@@ -1,0 +1,48 @@
+@import "susy";
+@import "breakpoint";
+
+$susy: (
+  columns: 12,
+  gutters: 1/2,
+);
+
+.input,
+.result {
+  @include container();
+
+  .input__icon {
+    @include span(3 no-gutters);
+  }
+
+  .input__container {
+    @include span(9 no-gutters);
+  }
+}
+
+
+
+/*
+  #left {
+    display: none;
+    @include breakpoint($xl-desktop) {
+      display: inline;
+      @include span(2);
+    }
+  }
+
+  #app {
+    @include breakpoint($xl-desktop) {
+      @include span(8);
+      margin-top: 16px;
+    }
+  }
+
+  #right {
+    display: none;
+    @include breakpoint($xl-desktop) {
+      display: inline;
+      @include span(2 last);
+    }
+  }
+
+*/

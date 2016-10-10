@@ -1,7 +1,24 @@
 @import "normalize";
 @import "variables/variables";
 @import "mixins/mixins";
+@import "grid";
 @import "typography/copy";
+@import "elements/elements";
 @import "site/site";
 
-@import "forms/slider/bootstrap-slider";    
+@import "forms/slider/bootstrap-slider";
+
+.app {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.input {
+  padding-top: 8px;
+  height: 72px;
+}
+
+.input__icon,
+.input__container {
+  @include vertical-align;
+}
