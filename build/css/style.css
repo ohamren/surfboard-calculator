@@ -60,49 +60,39 @@ table {
   /* Legacy iOS */ }
 
 .input,
-.result {
+.result,
+.surfboard-suggestions {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto; }
   .input:after,
-  .result:after {
+  .result:after,
+  .surfboard-suggestions:after {
     content: " ";
     display: block;
     clear: both; }
   .input .input__icon,
-  .result .input__icon {
+  .input .result__icon,
+  .result .input__icon,
+  .result .result__icon,
+  .surfboard-suggestions .input__icon,
+  .surfboard-suggestions .result__icon {
     width: 22.85714%;
     float: left; }
   .input .input__container,
-  .result .input__container {
+  .input .result__container,
+  .result .input__container,
+  .result .result__container,
+  .surfboard-suggestions .input__container,
+  .surfboard-suggestions .result__container {
     width: 74.28571%;
     float: left; }
+  .input .surfboard-suggestion,
+  .result .surfboard-suggestion,
+  .surfboard-suggestions .surfboard-suggestion {
+    width: 31.42857%;
+    float: left; }
 
-/*
-  #left {
-    display: none;
-    @include breakpoint($xl-desktop) {
-      display: inline;
-      @include span(2);
-    }
-  }
-
-  #app {
-    @include breakpoint($xl-desktop) {
-      @include span(8);
-      margin-top: 16px;
-    }
-  }
-
-  #right {
-    display: none;
-    @include breakpoint($xl-desktop) {
-      display: inline;
-      @include span(2 last);
-    }
-  }
-
-*/
 body,
 button,
 input,
@@ -150,7 +140,8 @@ textarea {
       background-image: url("../img/surfboard-calculator-logo-x2.png"); } }
 
 .input__icon,
-.result__icon {
+.result__icon,
+.surfboard-suggestion__image {
   background-repeat: no-repeat;
   display: block; }
 
@@ -189,6 +180,33 @@ textarea {
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .result__icon {
       background-image: url("../img/result-icon-x2.png"); } }
+
+.spitfire__image {
+  background-image: url("../img/boards/spitfire.jpg");
+  background-size: auto 150px;
+  max-width: 100px;
+  height: 150px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .spitfire__image {
+      background-image: url("../img/boards/spitfire.jpg"); } }
+
+.dominator__image {
+  background-image: url("../img/boards/dominator.jpg");
+  background-size: auto 150px;
+  max-width: 100px;
+  height: 150px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .dominator__image {
+      background-image: url("../img/boards/dominator.jpg"); } }
+
+.potatonator__image {
+  background-image: url("../img/boards/potatonator.jpg");
+  background-size: auto 150px;
+  max-width: 100px;
+  height: 150px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .potatonator__image {
+      background-image: url("../img/boards/potatonator.jpg"); } }
 
 /*
  * Slider for Bootstrap
@@ -597,12 +615,29 @@ textarea {
   height: 72px; }
 
 .input__icon,
-.input__container {
+.input__container,
+.result__icon,
+.result__container {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
+.input-fields {
+  padding-bottom: 24px; }
+
 .input__slider {
   padding-top: 8px; }
+
+.surfboard-suggestions-wrapper {
+  padding-top: 14px; }
+
+.slider.slider-horizontal {
+  width: 85%; }
+
+.surfboard-suggestions {
+  padding-top: 8px; }
+
+.surfboard-suggestion__image {
+  margin-top: 22px; }

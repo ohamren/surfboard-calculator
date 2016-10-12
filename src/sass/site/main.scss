@@ -1,5 +1,6 @@
 .input__icon,
-.result__icon {
+.result__icon,
+.surfboard-suggestion__image {
   background-repeat: no-repeat;
   display: block;
 }
@@ -10,15 +11,7 @@
   width: 27px;
   height: 17px;
 
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    background-image: url('../img/level-icon-x2.png');
-  }
+  @include responsive-image('../img/level-icon-x2.png');
 }
 
 .fitness__icon {
@@ -27,15 +20,7 @@
   width: 24px;
   height: 24px;
 
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    background-image: url('../img/fitness-icon-x2.png');
-  }
+  @include responsive-image('../img/fitness-icon-x2.png');
 }
 
 .weight__icon {
@@ -44,15 +29,7 @@
   width: 23px;
   height: 24px;
 
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    background-image: url('../img/weight-icon-x2.png');
-  }
+  @include responsive-image('../img/weight-icon-x2.png');
 }
 
 .result__icon {
@@ -61,13 +38,32 @@
   width: 24px;
   height: 24px;
 
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    background-image: url('../img/result-icon-x2.png');
-  }
+  @include responsive-image('../img/result-icon-x2.png');
+}
+
+.spitfire__image {
+  background-image: url('../img/boards/spitfire.jpg');
+  background-size: auto 150px;
+  max-width: 100px;
+  height: 150px;
+
+  @include responsive-image('../img/boards/spitfire.jpg');
+}
+
+.dominator__image {
+  background-image: url('../img/boards/dominator.jpg');
+  background-size: auto 150px;
+  max-width: 100px;
+  height: 150px;
+
+  @include responsive-image('../img/boards/dominator.jpg');
+}
+
+.potatonator__image {
+  background-image: url('../img/boards/potatonator.jpg');
+  background-size: auto 150px;
+  max-width: 100px;
+  height: 150px;
+
+  @include responsive-image('../img/boards/potatonator.jpg');
 }

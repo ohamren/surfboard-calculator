@@ -20,10 +20,33 @@
 }
 
 .input__icon,
-.input__container {
+.input__container,
+.result__icon,
+.result__container {
   @include vertical-align;
+}
+
+.input-fields {
+  padding-bottom: 24px;
 }
 
 .input__slider {
   padding-top: 8px;
+}
+
+.surfboard-suggestions-wrapper {
+  padding-top: 14px;
+
+}
+
+.slider.slider-horizontal {
+  width: 85%;
+}
+
+.surfboard-suggestions {
+  padding-top: 8px;
+}
+
+.surfboard-suggestion__image {
+  margin-top: 22px;
 }
