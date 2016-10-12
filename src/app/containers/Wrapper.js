@@ -16,7 +16,44 @@ class Wrapper extends Component {
       sliderLevel: 50,
       sliderFitness: 50,
       sliderWeight: 72,
+      volume: 0
     }
+  }
+
+  surfAlgo2000() {
+    /*
+    const WORLD_CHAMP = .34gf to.35gf // 100 - 80
+    const PRO = .35gf to .37gf // 80 - 60
+    const AVERAGE = .37gf to .38gf // 60 - 40
+    const WHITE_WATER = .38gf to .40gf // 40 - 20
+    const NEVER_SURFED = .40gf TO .50gf // 20-0
+    */
+
+    let levelFitnessAverage = (this.state.sliderLevel + this.state.sliderFitness) / 2
+    let magicNumber = 0
+
+    if (levelFitnessAverage >= 80) {
+      magicNumber = 0.34
+    }
+
+    if (levelFitnessAverage < 80 && levelFitnessAverage >= 60) {
+      magicNumber = 0.36
+    }
+
+    if (levelFitnessAverage < 60 && levelFitnessAverage >= 40) {
+      magicNumber = 0.37
+    }
+
+    if (levelFitnessAverage < 40 && levelFitnessAverage >= 20) {
+      magicNumber = 0.39
+    }
+
+    if (levelFitnessAverage < 20) {
+      magicNumber = 0.42
+    }
+
+    console.log("hej")
+    return (Math.round(this.state.sliderWeight * magicNumber))
   }
 
   level() {
@@ -80,7 +117,7 @@ class Wrapper extends Component {
                   <ReactBootstrapSlider
                     value={this.state.sliderLevel}
                     change={e => this.setState({sliderLevel: Number(e.target.value)})}
-                    slideStop={e => this.setState({sliderLevel: Number(e.target.value)})}
+                    slideStop={e => this.setState({sliderLevel: Number(e.target.value), volume: this.surfAlgo2000()})}
                     step={25}
                     max={100}
                     min={0}
@@ -101,7 +138,7 @@ class Wrapper extends Component {
                   <ReactBootstrapSlider
                     value={this.state.sliderFitness}
                     change={e => this.setState({sliderFitness: Number(e.target.value)})}
-                    slideStop={e => this.setState({sliderFitness: Number(e.target.value)})}
+                    slideStop={e => this.setState({sliderFitness: Number(e.target.value), volume: this.surfAlgo2000()})}
                     step={25}
                     max={100}
                     min={0}
@@ -122,7 +159,7 @@ class Wrapper extends Component {
                   <ReactBootstrapSlider
                     value={this.state.sliderWeight}
                     change={e => this.setState({sliderWeight: Number(e.target.value)})}
-                    slideStop={e => this.setState({sliderWeight: Number(e.target.value)})}
+                    slideStop={e => this.setState({sliderWeight: Number(e.target.value), volume: this.surfAlgo2000()})}
                     step={1}
                     max={120}
                     min={25}
@@ -141,10 +178,10 @@ class Wrapper extends Component {
           <div className="result__icon"></div>
           <div className="result__container">
             <div className="result__text">Your board should be about
-            <span className="result--highlight"> 32-40 </span>litres
-            something like <span className="result--highlight"> 6.0 </span>ft
-            long, <span className="result--highlight"> 19 3/4 </span> inches wide
-            and <span className="result--highlight"> 2 3/8 </span>inches thick.
+            <span className="result--highlight"> {this.state.volume} </span>litres something like
+            <span className="result--highlight"> 6.0 </span>ft long,
+            <span className="result--highlight"> 19 3/4 </span> inches wide and
+            <span className="result--highlight"> 2 3/8 </span> inches thick.
             </div>
           </div>
         </div>
