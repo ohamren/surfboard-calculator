@@ -20,15 +20,36 @@ class Wrapper extends Component {
     }
   }
 
-  surfAlgo2000() {
+  standardShortboard() {
+    let height, width, thickness = 0
+
+    function dims(h, w, t) {
+      return [h, w, t]
+    }
+
+    if (this.state.volume == 26) {
+      return dims("5’8", "19.25", "2.25")
+    }
+
     /*
-    const WORLD_CHAMP = .34gf to.35gf // 100 - 80
-    const PRO = .35gf to .37gf // 80 - 60
-    const AVERAGE = .37gf to .38gf // 60 - 40
-    const WHITE_WATER = .38gf to .40gf // 40 - 20
-    const NEVER_SURFED = .40gf TO .50gf // 20-0
+    ENGTH	WIDTH	THICKNESS	CL’S
+    5’8″	19.25″	2.25″	26.05
+    5’9″	19.38″	2.32″	27.42
+    5’10″	19.50″	2.38″	28.74
+    5’11″	19.75″	2.44″	30.28
+    6’0″	20.00″	2.5″	31.79
+    6’1″	20.25″	2.56″	33.27
+    6’2″	20.50″	2.63″	35.24
+    6’3″	20.75″	2.63″	36.23
+    6’4″	21.00″	2.75″	38.8
     */
 
+
+
+    return [0, 0, 0]
+  }
+
+  surfAlgo2000() {
     let levelFitnessAverage = (this.state.sliderLevel + this.state.sliderFitness) / 2
     let magicNumber = 0
 
@@ -52,7 +73,6 @@ class Wrapper extends Component {
       magicNumber = 0.42
     }
 
-    console.log("hej")
     return (Math.round(this.state.sliderWeight * magicNumber))
   }
 
@@ -179,7 +199,7 @@ class Wrapper extends Component {
           <div className="result__container">
             <div className="result__text">Your board should be about
             <span className="result--highlight"> {this.state.volume} </span>litres something like
-            <span className="result--highlight"> 6.0 </span>ft long,
+            <span className="result--highlight"> {() => this.standardShortboard()}6.0 </span>ft long,
             <span className="result--highlight"> 19 3/4 </span> inches wide and
             <span className="result--highlight"> 2 3/8 </span> inches thick.
             </div>
