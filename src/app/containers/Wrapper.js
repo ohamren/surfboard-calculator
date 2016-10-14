@@ -20,33 +20,29 @@ class Wrapper extends Component {
     }
   }
 
-  standardShortboard() {
-    let height, width, thickness = 0
+  surfboard() {
+    let volume = this.state.volume
+    const MODEL_BOARD = [
+      {id: 1, length: "5’8″" , width: "19.25″", thickness: "2.25″", cl: 26.05},
+      {id: 2, length: "5’9″", width: "19.38″", thickness: "2.32″", cl: 27.42},
+      {id: 3, length: "5’10″", width: "19.50″", thickness: "2.38″", cl: 28.74},
+      {id: 4, length: "5’11″", width: "19.75″", thickness: "2.44″", cl: 30.28},
+      {id: 5, length: "6’0″", width: "20.00″", thickness: "2.5″", cl: 31.79},
+      {id: 6, length: "6’1″", width: "20.25″", thickness: "2.56″", cl: 33.27},
+      {id: 7, length: "6’2″", width: "20.50″", thickness: "2.63″", cl: 35.24},
+      {id: 8, length: "6’3″", width: "20.75″", thickness: "2.63″", cl: 36.23},
+      {id: 9, length: "6’4″", width: "21.00″", thickness: "2.75″", cl: 38.8}
+    ]
 
-    function dims(h, w, t) {
-      return [h, w, t]
+    for(var i = 0; i < MODEL_BOARD.length; i++) {
+      if (MODEL_BOARD[i].cl <= volume && Math.ceil(MODEL_BOARD[i].cl) >= volume) {
+        console.log(MODEL_BOARD[i].cl)
+        console.log(Math.ceil(MODEL_BOARD[i].cl))
+        console.log(MODEL_BOARD[i].length)
+      } else {
+        console.log("No have")
+      }
     }
-
-    if (this.state.volume == 26) {
-      return dims("5’8", "19.25", "2.25")
-    }
-
-    /*
-    ENGTH	WIDTH	THICKNESS	CL’S
-    5’8″	19.25″	2.25″	26.05
-    5’9″	19.38″	2.32″	27.42
-    5’10″	19.50″	2.38″	28.74
-    5’11″	19.75″	2.44″	30.28
-    6’0″	20.00″	2.5″	31.79
-    6’1″	20.25″	2.56″	33.27
-    6’2″	20.50″	2.63″	35.24
-    6’3″	20.75″	2.63″	36.23
-    6’4″	21.00″	2.75″	38.8
-    */
-
-
-
-    return [0, 0, 0]
   }
 
   surfAlgo2000() {
@@ -73,13 +69,13 @@ class Wrapper extends Component {
       magicNumber = 0.42
     }
 
+    this.surfboard()
     return (Math.round(this.state.sliderWeight * magicNumber))
   }
 
   level() {
     if(this.state.sliderLevel === 0) {
       return "Kook"
-      //return value + ' ' + this.id;
     }
     if(this.state.sliderLevel === 25) {
       return "You find me in the white water"
@@ -136,7 +132,7 @@ class Wrapper extends Component {
                 <div className="input__slider">
                   <ReactBootstrapSlider
                     value={this.state.sliderLevel}
-                    change={e => this.setState({sliderLevel: Number(e.target.value)})}
+                    change={e => this.setState({sliderLevel: Number(e.target.value), volume: this.surfAlgo2000()})}
                     slideStop={e => this.setState({sliderLevel: Number(e.target.value), volume: this.surfAlgo2000()})}
                     step={25}
                     max={100}
@@ -157,7 +153,7 @@ class Wrapper extends Component {
                 <div className="input__slider">
                   <ReactBootstrapSlider
                     value={this.state.sliderFitness}
-                    change={e => this.setState({sliderFitness: Number(e.target.value)})}
+                    change={e => this.setState({sliderFitness: Number(e.target.value), volume: this.surfAlgo2000()})}
                     slideStop={e => this.setState({sliderFitness: Number(e.target.value), volume: this.surfAlgo2000()})}
                     step={25}
                     max={100}
@@ -178,7 +174,7 @@ class Wrapper extends Component {
                 <div className="input__slider">
                   <ReactBootstrapSlider
                     value={this.state.sliderWeight}
-                    change={e => this.setState({sliderWeight: Number(e.target.value)})}
+                    change={e => this.setState({sliderWeight: Number(e.target.value), volume: this.surfAlgo2000()})}
                     slideStop={e => this.setState({sliderWeight: Number(e.target.value), volume: this.surfAlgo2000()})}
                     step={1}
                     max={120}
@@ -199,7 +195,7 @@ class Wrapper extends Component {
           <div className="result__container">
             <div className="result__text">Your board should be about
             <span className="result--highlight"> {this.state.volume} </span>litres something like
-            <span className="result--highlight"> {() => this.standardShortboard()}6.0 </span>ft long,
+            <span className="result--highlight"> 6.0 </span>ft long,
             <span className="result--highlight"> 19 3/4 </span> inches wide and
             <span className="result--highlight"> 2 3/8 </span> inches thick.
             </div>
